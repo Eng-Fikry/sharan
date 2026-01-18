@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>تفاصيل الشكوى - إدارة الشكاوى</title>
+
+  <!-- Favicons -->
+  <link href="images/logo2.png" rel="icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .detail-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px 0;
+      margin-bottom: 30px;
+    }
+
+    .detail-header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .btn-back {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-back:hover {
+      background: white;
+      color: #764ba2;
+    }
+
+    .detail-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .detail-card h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #ecf0f1;
+    }
+
+    .info-row {
+      display: flex;
+      padding: 15px 0;
+      border-bottom: 1px solid #ecf0f1;
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: #7f8c8d;
+      min-width: 150px;
+      display: flex;
+      align-items: center;
+    }
+
+    .info-label i {
+      margin-left: 8px;
+      color: #b10800;
+    }
+
+    .info-value {
+      color: #2c3e50;
+      flex: 1;
+    }
+
+    .description-box {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      border-right: 4px solid #b10800;
+      line-height: 1.8;
+      color: #2c3e50;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 150px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-read {
+      background: #3498db;
+      color: white;
+    }
+
+    .btn-read:hover {
+      background: #2980b9;
+    }
+
+    .btn-resolve {
+      background: #27ae60;
+      color: white;
+    }
+
+    .btn-resolve:hover {
+      background: #229954;
+    }
+
+    .btn-reject {
+      background: #e74c3c;
+      color: white;
+    }
+
+    .btn-reject:hover {
+      background: #c0392b;
+    }
+
+    .btn-delete {
+      background: #95a5a6;
+      color: white;
+    }
+
+    .btn-delete:hover {
+      background: #7f8c8d;
+    }
+
+    @media (max-width: 768px) {
+      .action-buttons {
+        flex-direction: column;
+      }
+
+      .btn-action {
+        width: 100%;
+      }
+
+      .info-row {
+        flex-direction: column;
+      }
+
+      .info-label {
+        margin-bottom: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="detail-header">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1><i class="bi bi-file-earmark-text"></i> تفاصيل الشكوى</h1>
+        <a href="admin-dashboard.html" class="btn-back">
+          <i class="bi bi-arrow-right"></i> العودة للوحة التحكم
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Complaint Details -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <!-- Main Info Card -->
+        <div class="detail-card">
+          <h2><i class="bi bi-info-circle"></i> المعلومات الأساسية</h2>
+          
+          <div class="info-row">
+            <div class="info-label">
+              <i class="bi bi-card-heading"></i> عنوان الشكوى
+            </div>
+            <div class="info-value" id="detailTitle">-</div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-label">
+              <i class="bi bi-person"></i> اسم المشتكي
+            </div>
+            <div class="info-value" id="detailName">-</div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-label">
+              <i class="bi bi-telephone"></i> رقم الهاتف
+            </div>
+            <div class="info-value" id="detailPhone">-</div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-label">
+              <i class="bi bi-envelope"></i> البريد الإلكتروني
+            </div>
+            <div class="info-value" id="detailEmail">-</div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-label">
+              <i class="bi bi-credit-card"></i> رقم الهوية
+            </div>
+            <div class="info-value" id="detailIdNumber">-</div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-label">
+              <i class="bi bi-tag"></i> نوع الشكوى
+            </div>
+            <div class="info-value" id="detailType">-</div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-label">
+              <i class="bi bi-calendar"></i> تاريخ التقديم
+            </div>
+            <div class="info-value" id="detailDate">-</div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-label">
+              <i class="bi bi-flag"></i> الحالة
+            </div>
+            <div class="info-value" id="detailStatus">-</div>
+          </div>
+        </div>
+
+        <!-- Description Card -->
+        <div class="detail-card">
+          <h2><i class="bi bi-file-text"></i> وصف المشكلة</h2>
+          <div class="description-box" id="detailDescription">
+            -
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <!-- Actions Card -->
+        <div class="detail-card">
+          <h2><i class="bi bi-gear"></i> الإجراءات</h2>
+          
+          <div class="action-buttons">
+            <button onclick="markAsRead()" class="btn-action btn-read">
+              <i class="bi bi-eye"></i> تم القراءة
+            </button>
+
+            <button onclick="resolveComplaint()" class="btn-action btn-resolve">
+              <i class="bi bi-check-circle"></i> تم الحل
+            </button>
+
+            <button onclick="rejectComplaint()" class="btn-action btn-reject">
+              <i class="bi bi-x-circle"></i> رفض
+            </button>
+
+            <button onclick="deleteComplaint()" class="btn-action btn-delete">
+              <i class="bi bi-trash"></i> حذف
+            </button>
+          </div>
+
+          <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border-radius: 6px; font-size: 13px; color: #856404;">
+            <i class="bi bi-info-circle"></i>
+            <strong>ملاحظة:</strong> سيتم إرسال بريد إلكتروني تلقائي للمستخدم عند تنفيذ أي إجراء.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/complaints.js"></script>
+
+</body>
+</html>

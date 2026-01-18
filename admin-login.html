@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>تسجيل دخول الإدارة - المهندس احمد شرعان</title>
+
+  <!-- Favicons -->
+  <link href="images/logo2.png" rel="icon">
+  
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    .login-logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .login-logo img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+    }
+
+    .login-logo h2 {
+      color: #2c3e50;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .login-logo p {
+      color: #7f8c8d;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .input-group {
+      position: relative;
+    }
+
+    .input-group i {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #95a5a6;
+      font-size: 18px;
+    }
+
+    .form-control {
+      padding: 12px 45px 12px 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    .form-control:focus {
+      border-color: #b10800;
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba(216, 140, 62, 0.25);
+    }
+
+    .btn-login {
+      width: 100%;
+      background:  #b10800;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn-login:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(216, 140, 62, 0.4);
+    }
+
+    .alert {
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .alert-danger {
+      background-color: #fee;
+      border: 1px solid #fcc;
+      color: #c33;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-link a {
+      color: #b10800;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+
+    .credentials-hint {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #6c757d;
+      text-align: center;
+    }
+
+    .credentials-hint strong {
+      color: #2c3e50;
+      display: block;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+    <div class="login-logo">
+      <img src="images/logo2.png" alt="Logo">
+      <h2>لوحة تحكم الإدارة</h2>
+      <p>نظام إدارة الشكاوى</p>
+    </div>
+
+    <div class="alert alert-danger" id="loginError">
+      <i class="bi bi-exclamation-triangle-fill"></i>
+      اسم المستخدم أو كلمة المرور غير صحيحة
+    </div>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label class="form-label">اسم المستخدم</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="username" name="username" required autocomplete="username">
+          <i class="bi bi-person-fill"></i>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">كلمة المرور</label>
+        <div class="input-group">
+          <input type="password" class="form-control" id="password" name="password" required autocomplete="current-password">
+          <i class="bi bi-lock-fill"></i>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-login">
+        <i class="bi bi-box-arrow-in-right"></i> تسجيل الدخول
+      </button>
+    </form>
+
+    <div class="credentials-hint">
+      <strong><i class="bi bi-info-circle"></i> بيانات التجربة:</strong>
+      اسم المستخدم: <code>admin</code><br>
+      كلمة المرور: <code>admin2026</code>
+    </div>
+
+    <div class="back-link">
+      <a href="index.html">
+        <i class="bi bi-arrow-right"></i> العودة إلى الصفحة الرئيسية
+      </a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/complaints.js"></script>
+
+</body>
+</html>
