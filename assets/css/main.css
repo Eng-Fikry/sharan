@@ -1901,6 +1901,23 @@ section,
 /* افتراضي: لاب / كمبيوتر */
 
 
+.hero {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.hero-img-wrapper {
+  width: 100%;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
 
 
 
