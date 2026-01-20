@@ -1920,6 +1920,17 @@ section,
 
 
 
+.stats-item {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.stats-item:hover {
+  transform: translateY(-3px);
+}
+
 
 
 
